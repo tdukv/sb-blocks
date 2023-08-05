@@ -1,5 +1,9 @@
 #!/bin/sh
 
+case $BUTTON in
+    1) cal -m | xmessage -file - -nearmouse -timeout 5 ;;
+esac
+
 hourmin=$(date -d "+15min" '+%I;%M')
 
 if [ "${hourmin#*;}" -gt 30 ]; then

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-state="$(sed "s/up//; s/down//; s/dormant/🔃/" /sys/class/net/wlp*/operstate)"
+state="$(sed "s/up/ /; s/down//; s/dormant/🔃/" /sys/class/net/wlp*/operstate)"
 state="${state}$(sed "s/up//; s/down//" /sys/class/net/enp*/operstate)"
 
 if [ -z "$state" ]; then

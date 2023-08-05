@@ -1,5 +1,11 @@
 #!/bin/sh
 
+case $BUTTON in
+    1) pamixer --allow-boost -t   ;;
+    4) pamixer --allow-boost -i 1 ;;
+    5) pamixer --allow-boost -d 1 ;;
+esac
+
 vol=$(pamixer --get-volume --get-mute)
 
 if [ -n "${vol%%false*}" ] ; then
@@ -13,4 +19,3 @@ elif [ "${vol##* }" -gt 33 ]; then
 else
     printf "🔈%3s%%\n" "${vol##* }"
 fi
-
