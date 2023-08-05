@@ -1,6 +1,13 @@
 #!/bin/sh
 
+case $BUTTON in
+    1) mpc toggle   ;;
+    2) mpd-xmessage ;;
+    3) mpc stop     ;;
+    4) mpc prev     ;;
+    5) mpc next     ;;
+esac
+
 status="$(mpc status | sed "/^volume/d; /^ERROR/d; s/\[paused\].*/ /; s/\[playing\].*/ /" | tac | tr -d '\n' | cut -c 1-30)"
 
 [ -z "$status" ] && printf "\n" || printf "%s\n" "$status"
-
