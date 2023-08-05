@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf "%s%s\n" "" "$(sed 's/.00$/°C/' /sys/class/thermal/thermal_zone?/temp | paste -sd ' ')"
