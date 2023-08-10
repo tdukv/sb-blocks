@@ -2,6 +2,7 @@
 
 case $BUTTON in
     1) pamixer --allow-boost -t   ;;
+    3) volwjt -t                  ;;
     4) pamixer --allow-boost -i 1 ;;
     5) pamixer --allow-boost -d 1 ;;
 esac
