@@ -1,7 +1,8 @@
 #!/bin/sh
 
 case $BUTTON in
-    1) cal -m | xmessage -file - -nearmouse -timeout 5 ;;
+    1) cal -m  | xmessage -file - -nearmouse -timeout 5 ;;
+    3) cal -m3 | xmessage -file - -nearmouse -timeout 5 ;;
 esac
 
 hourmin=$(date -d "+15min" '+%I;%M')
@@ -42,4 +43,4 @@ case "$hour" in
     *) icon="Err!";;
 esac
 
-date "+%a %d %b clk%R" | sed "s/clk/$icon/"
+date "+%a %d %b ${icon}%R"
